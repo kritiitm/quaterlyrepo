@@ -9,19 +9,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme" />
   <!-- Code syntax highlighting theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css" />
-  <style>
-    /* Fine-tuning for a clean, modern look */
-    .reveal .slides section h1, .reveal .slides section h2 { letter-spacing: 0.5px; }
-    .reveal .slides section p { line-height: 1.3; }
-    .badge { display:inline-block; padding: .25em .6em; border-radius: 999px; font-size:.6em; background:#2ea44f; color:#fff; vertical-align: middle; }
-    .muted { opacity:.75; font-size:.8em; }
-    .kpi { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; margin-top: 18px; }
-    .kpi .card { border-radius: 16px; padding: 18px; background: rgba(255,255,255,.04); box-shadow: 0 8px 24px rgba(0,0,0,.18) inset; }
-    .kpi .card h3 { margin: 0 0 8px; font-size: 28px; }
-    .kpi .card p { margin: 0; }
-    .footnote { font-size:.6em; opacity:.8; margin-top:12px; }
-    .reveal pre code { font-size: 0.75em; line-height: 1.35; }
-  </style>
 </head>
 <body>
   <div class="reveal">
@@ -30,53 +17,12 @@
       <!-- Title -->
       <section>
         <h1>Q2 FY2025 Earnings</h1>
-        <p>Modern, interactive presentation powered by <strong>Reveal.js</strong> <span class="badge">live</span></p>
-        <p class="muted">Prepared by Technical Consulting — Major Financial Institution</p>
-        <p class="muted">Contact: <a href="mailto:24f2003023@ds.study.iitm.ac.in">24f2003023@ds.study.iitm.ac.in</a></p>
-        <aside class="notes">
-          Welcome stakeholders. This deck showcases quarterly results and modern presentation features (markdown, fragments, code, math, and speaker notes). Use the <kbd>S</kbd> key to open Speaker View.
-        </aside>
+        <p>Modern, interactive presentation powered by <strong>Reveal.js</strong></p>
+        <p>Prepared by Technical Consulting — Major Financial Institution</p>
+        <p><strong>Contact:</strong> <a href="mailto:24f2003023@ds.study.iitm.ac.in">24f2003023@ds.study.iitm.ac.in</a></p>
       </section>
 
-      <!-- Agenda with animated fragments -->
-      <section>
-        <h2>Agenda</h2>
-        <ul>
-          <li class="fragment fade-in-then-semi-out">Macro snapshot & topline KPIs</li>
-          <li class="fragment fade-in-then-semi-out">Business segment performance</li>
-          <li class="fragment fade-in-then-semi-out">Margin & risk metrics</li>
-          <li class="fragment fade-in-then-semi-out">Tech spotlight: reproducible analytics</li>
-          <li class="fragment fade-in-then-semi-out">Outlook & guidance</li>
-        </ul>
-        <aside class="notes">
-          Step through each bullet with fragments to pace the narrative. Tie each agenda item to an upcoming slide.
-        </aside>
-      </section>
-
-      <!-- KPI grid + fragments for emphasis -->
-      <section>
-        <h2>Topline (Illustrative)</h2>
-        <div class="kpi">
-          <div class="card fragment">
-            <h3>Revenue</h3>
-            <p>$3.2B <span class="muted">(+8% YoY)</span></p>
-          </div>
-          <div class="card fragment">
-            <h3>Net Income</h3>
-            <p>$410M <span class="muted">(+11% YoY)</span></p>
-          </div>
-          <div class="card fragment">
-            <h3>EPS (Dil.)</h3>
-            <p>$1.52 <span class="muted">(+9% YoY)</span></p>
-          </div>
-        </div>
-        <p class="footnote fragment">Note: Figures are placeholders for demo; replace with actuals before publishing.</p>
-        <aside class="notes">
-          Call out growth drivers. Emphasize disciplined cost control and operating leverage.
-        </aside>
-      </section>
-
-      <!-- Markdown slide (require Markdown plugin) -->
+      <!-- Markdown Slide -->
       <section data-markdown>
         <textarea data-template>
 # Business Highlights _(Markdown)_
@@ -87,107 +33,63 @@
 
 > _Takeaway:_ Diversified revenue base cushions macro volatility.
         </textarea>
-        <aside class="notes">
-          This slide is authored in Markdown to make edits fast. Encourage PMs to open PRs to update bullet points.
-        </aside>
       </section>
 
-      <!-- Math: financial formulas using KaTeX -->
+      <!-- Fragments -->
+      <section>
+        <h2>Agenda</h2>
+        <ul>
+          <li class="fragment">Macro snapshot & topline KPIs</li>
+          <li class="fragment">Business segment performance</li>
+          <li class="fragment">Margin & risk metrics</li>
+          <li class="fragment">Tech spotlight: reproducible analytics</li>
+          <li class="fragment">Outlook & guidance</li>
+        </ul>
+      </section>
+
+      <!-- Math -->
       <section>
         <h2>Financial Math</h2>
-        <p>Compound Annual Growth Rate (CAGR):</p>
+        <p>CAGR:</p>
         <p>$$\mathrm{CAGR} = \left(\frac{\text{Ending Value}}{\text{Beginning Value}}\right)^{1/n} - 1$$</p>
-        <p>Net Present Value (NPV):</p>
+        <p>NPV:</p>
         <p>$$\mathrm{NPV} = \sum_{t=0}^{T} \frac{C_t}{(1+r)^t}$$</p>
-        <p>Return on Equity (ROE):</p>
-        <p>$$\mathrm{ROE} = \frac{\text{Net Income}}{\text{Average Shareholders' Equity}}$$</p>
-        <aside class="notes">
-          Walk through intuition: time value of money (NPV), compounding (CAGR), and profitability (ROE).
-        </aside>
       </section>
 
-      <!-- Code samples with syntax highlighting -->
+      <!-- Code Samples -->
       <section>
-        <h2>Reproducible KPIs (Code)</h2>
-        <pre><code class="language-python"># Example: EBITDA margin and interest coverage
-from dataclasses import dataclass
-
-a = lambda x: round(x, 2)
-
+        <h2>Example Code</h2>
+        <pre><code class="language-python">
 @dataclass
 class Financials:
     revenue: float
     ebitda: float
-    ebit: float
-    interest_expense: float
 
-f = Financials(revenue=3200.0, ebitda=910.0, ebit=650.0, interest_expense=180.0)
-
-ebitda_margin = f.ebitda / f.revenue  # 28.4%
-interest_coverage = f.ebit / f.interest_expense  # 3.6x
-
-print({
-    "EBITDA_margin": a(ebitda_margin * 100),
-    "Interest_coverage": a(interest_coverage)
-})
-</code></pre>
-        <pre><code class="language-sql">-- Illustrative: revenue by segment (Q2)
-SELECT segment,
-       SUM(revenue) AS rev,
-       SUM(expense) AS opex,
-       SUM(revenue) - SUM(expense) AS op_income
-FROM ledger
-WHERE quarter = '2025Q2'
-GROUP BY segment
-ORDER BY rev DESC;
-</code></pre>
-        <aside class="notes">
-          Stress test assumptions and automate: commit analysis notebooks; run CI to validate KPIs before publishing.
-        </aside>
+f = Financials(revenue=3200.0, ebitda=910.0)
+margin = f.ebitda / f.revenue
+print("EBITDA margin:", margin)
+        </code></pre>
       </section>
 
-      <!-- Speaker notes demo -->
-      <section>
-        <h2>Outlook & Guidance</h2>
-        <ul>
-          <li class="fragment">FY25 revenue growth mid-to-high single digits</li>
-          <li class="fragment">Operating margin expansion ~50–80 bps</li>
-          <li class="fragment">Capital return: continued buybacks + sustainable dividend</li>
-        </ul>
-        <aside class="notes">
-          Anchor guidance to macro scenarios. Reiterate risk management posture and liquidity coverage.
-        </aside>
-      </section>
-
-      <!-- Contact / Email confirmation -->
+      <!-- Contact -->
       <section>
         <h2>Questions?</h2>
-        <p>Contact: <a href="mailto:24f2003023@ds.study.iitm.ac.in">24f2003023@ds.study.iitm.ac.in</a></p>
-        <p class="muted">Press <kbd>S</kbd> for speaker notes, <kbd>F</kbd> to go full screen.</p>
-        <aside class="notes">
-          Invite Q&A and point to repo README for how to contribute updates.
-        </aside>
+        <p>Email: <a href="mailto:24f2003023@ds.study.iitm.ac.in">24f2003023@ds.study.iitm.ac.in</a></p>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal.js core -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
-  <!-- Plugins -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
 
   <script>
-    // Initialize Reveal with plugins
     Reveal.initialize({
       hash: true,
-      slideNumber: 'c/t',
-      transition: 'slide',
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-      // Configure KaTeX (loaded by the math plugin)
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
       math: {
         katex: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js',
         katexCss: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
